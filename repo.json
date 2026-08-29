@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "identifier": "com.baobao.repository",
   "name": "baobao's Repo",
-  "description": "Patch repository cho 3105. Patch đầu tay: Weapon Ball Fight (WBF) Full unlock.",
   "packages": [
     {
       "identifier": "wbf-full",
@@ -43,7 +42,9 @@
       ],
       "changelog": "Bản đầu tiên.",
       "featured": true,
-      "isPrivate": false
+      "isPrivate": false,
+      "icon": "assets/wbf-full.jpg"
     }
-  ]
+  ],
+  "icon": "assets/repo-icon.jpg"
 }
