@@ -43,8 +43,11 @@
       "changelog": "Bản đầu tiên.",
       "featured": true,
       "isPrivate": false,
-      "icon": "assets/wbf-full.jpg"
+      "icon": "assets/wbf-full.png",
+      "screenshots": [
+        "assets/wbf-full.png"
+      ]
     }
   ],
-  "icon": "assets/repo-icon.jpg"
+  "icon": "assets/repo-icon.png"
 }
