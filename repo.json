@@ -9,7 +9,6 @@
       "author": "b",
       "version": "1.0.0",
       "summary": "Full Weapon Ball Fight.",
-      "description": "",
       "category": "Game",
       "tags": [
         "Application",
@@ -48,10 +47,5 @@
       ]
     }
   ],
-<<<<<<< HEAD
   "icon": "assets/repo-icon.png"
 }
-=======
-  "icon": "assets/repo-icon.jpg"
-}
->>>>>>> origin/main
