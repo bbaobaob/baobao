@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "identifier": "com.baobao.repository",
+  "name": "baobao's Repo",
+  "description": "Patch repository cho 3105. Patch đầu tay: Weapon Ball Fight (WBF) Full unlock.",
+  "packages": [
+    {
+      "identifier": "wbf-full",
+      "name": "WBF Full",
+      "author": "Sisyphus",
+      "version": "1.0.0",
+      "summary": "Unlock toàn bộ tính năng Weapon Ball Fight.",
+      "description": "Mở khóa Weapon Ball Fight (com.balangodev.weaponballfight) qua LocalStorage.\nÁp dụng bằng 3105, không cần mật khẩu.",
+      "category": "Game",
+      "tags": [
+        "Application",
+        "Game",
+        "Unlock"
+      ],
+      "publishedAt": "2026-08-29T07:15:00Z",
+      "download": "packages/WBF-Full.3105",
+      "sha256": "84f26da207e3720e0a13bfc2387464239e6457410b8035c758965295ef73940d",
+      "size": 72417,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
+      "changelog": "Bản đầu tiên.",
+      "featured": true,
+      "isPrivate": false
+    }
+  ]
+}
