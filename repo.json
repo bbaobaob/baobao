@@ -7,7 +7,7 @@
     {
       "identifier": "wbf-full",
       "name": "WBF Full",
-      "author": "Sisyphus",
+      "author": "b",
       "version": "1.0.0",
       "summary": "Unlock toàn bộ tính năng Weapon Ball Fight.",
       "description": "Mở khóa Weapon Ball Fight (com.balangodev.weaponballfight) qua LocalStorage.\nÁp dụng bằng 3105, không cần mật khẩu.",
@@ -19,8 +19,8 @@
       ],
       "publishedAt": "2026-08-29T07:15:00Z",
       "download": "packages/WBF-Full.3105",
-      "sha256": "84f26da207e3720e0a13bfc2387464239e6457410b8035c758965295ef73940d",
-      "size": 72417,
+      "sha256": "71c7edafba59384c01e17106ce8a1a1affa3be9c875974bd99ba1eac09fe0181",
+      "size": 72423,
       "supportedOS": [
         {
           "minimum": "17.0",
