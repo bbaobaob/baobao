@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "identifier": "com.baobao.repository",
   "name": "baobao's Repository",
+  "description": "Source Repository Của @Kocoj",
   "packages": [
     {
       "identifier": "wbf-full",
