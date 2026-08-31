@@ -46,6 +46,49 @@
       "screenshots": [
         "assets/wbf-full.png"
       ]
+    },
+    {
+      "identifier": "pvz1-full",
+      "name": "PVZ1-Full",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "Plants vs Zombies Full Unlock — Gold + All Modes + Speed Boost + NoAds.",
+      "category": "Game",
+      "tags": [
+        "Application",
+        "Game"
+      ],
+      "publishedAt": "2026-08-30T13:30:00Z",
+      "download": "packages/PVZ1-Full.3105",
+      "sha256": "c9b05339cde8aa6fddf943f75d13d93695b53df2bf6f63a5aafa0d06df47f15a",
+      "size": 70491,
+      "supportedOS": [
+        {
+          "minimum": "15.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
+      "changelog": "Full unlock — Gold, All Modes, Speed Boost, NoAds.",
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/pvz1-full.png",
+      "screenshots": [
+        "assets/pvz1-full.png"
+      ]
     }
   ],
   "icon": "assets/repo-icon.png"
