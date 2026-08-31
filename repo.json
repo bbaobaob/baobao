@@ -59,7 +59,7 @@
         "Game"
       ],
       "publishedAt": "2026-08-30T13:30:00Z",
-      "download": "packages/PVV.3105",
+      "download": "packages/PVZ1-Full.3105",
       "sha256": "c9b05339cde8aa6fddf943f75d13d93695b53df2bf6f63a5aafa0d06df47f15a",
       "size": 70491,
       "supportedOS": [
@@ -87,7 +87,9 @@
       "isPrivate": false,
       "icon": "assets/pvz1-full.png",
       "screenshots": [
-        "assets/pvz1-full.png"
+        "assets/PVZ-1.png",
+        "assets/PVZ-2.png",
+        "assets/PVZ-3.png"
       ]
     }
   ],
