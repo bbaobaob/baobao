@@ -6,10 +6,10 @@
   "packages": [
     {
       "identifier": "wbf-full",
-      "name": "WBF Full",
+      "name": "Weapon Ball Fight Mod",
       "author": "b",
       "version": "1.0.0",
-      "summary": "Full Weapon Ball Fight.",
+      "summary": "Weapon Ball Fight Full",
       "category": "Game",
       "tags": [
         "Application",
@@ -52,7 +52,7 @@
       "name": "PVZ1-Full",
       "author": "b",
       "version": "1.0.0",
-      "summary": "Plants vs Zombies Full Unlock — Gold + All Modes + Speed Boost + NoAds.",
+      "summary": "Plants vs Zombies Full.",
       "category": "Game",
       "tags": [
         "Application",
@@ -82,7 +82,7 @@
           ]
         }
       ],
-      "changelog": "Full unlock — Gold, All Modes, Speed Boost, NoAds.",
+      "changelog": "Tiền tài danh vọng có hết.",
       "featured": true,
       "isPrivate": false,
       "icon": "assets/pvz1-full.png",
