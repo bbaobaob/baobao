@@ -41,7 +41,7 @@
         }
       ],
       "featured": true,
-      "isPrivate": true,
+      "isPrivate": false,
       "icon": "assets/wbf-full.png",
       "screenshots": [
         "assets/wbf-1.png",
@@ -87,7 +87,7 @@
         }
       ],
       "featured": true,
-      "isPrivate": true,
+      "isPrivate": false,
       "icon": "assets/pvz1-full.png",
       "screenshots": [
         "assets/PVZ-1.png",
@@ -133,7 +133,7 @@
         }
       ],
       "featured": true,
-      "isPrivate": true,
+      "isPrivate": false,
       "icon": "assets/fimo-full.png",
       "screenshots": [
         "assets/fimo-1.png",
