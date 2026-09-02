@@ -93,6 +93,51 @@
         "assets/PVZ-2.png",
         "assets/PVZ-3.png"
       ]
+    },
+    {
+      "identifier": "fimo-pro",
+      "name": "FIMO PRO",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "FIMO 𖤐 Đã Mở Khóa VIP",
+      "description": "★ Tính Năng ★\n\n• Mở khóa VIP vĩnh viễn (NoLogin Forever).\n• Sử dụng không giới hạn toàn bộ Film Pro/Premium.\n• Bỏ qua giới hạn dùng thử ảnh.\n• Hết hạn vào năm 2099.\n\n⊹ Trải nghiệm FIMO với toàn bộ film cao cấp đã được mở khóa.",
+      "category": "Photography",
+      "tags": [
+        "Application",
+        "Photography"
+      ],
+      "publishedAt": "2026-09-02T21:30:00Z",
+      "download": "packages/FIMO-PRO.3105",
+      "sha256": "54e4f7701f992f9e1f02d5131cb0f3c977379ac565a6bc06cbaf726043209b74",
+      "size": 170334,
+      "supportedOS": [
+        {
+          "minimum": "15.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.6.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/fimo-full.png",
+      "screenshots": [
+        "assets/fimo-1.png",
+        "assets/fimo-2.png",
+        "assets/fimo-3.png"
+      ]
     }
   ],
   "icon": "assets/repo-icon.png"
