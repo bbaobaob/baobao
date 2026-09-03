@@ -5,7 +5,7 @@
   "description": "Source Repository Của @Kocoj",
   "packages": [
     {
-      "identifier": "wbf-full",
+      "identifier": "b'wbf",
       "name": "b'WBF",
       "author": "b",
       "version": "1.0.0",
@@ -51,7 +51,7 @@
       "password": "JFL"
     },
     {
-      "identifier": "pvz1-full",
+      "identifier": "b'pvz",
       "name": "b'PVZ",
       "author": "b",
       "version": "1.0.0",
@@ -97,7 +97,7 @@
       "password": "JFL"
     },
     {
-      "identifier": "fimo-pro",
+      "identifier": "b'fimo",
       "name": "b'FIMO",
       "author": "b",
       "version": "1.0.0",
