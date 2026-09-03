@@ -18,8 +18,8 @@
       ],
       "publishedAt": "2026-08-29T07:15:00Z",
       "download": "packages/bWBF.3105",
-      "sha256": "4619e9e1a33f9492e6984c07f3a6c54bd16074c819608f938ec610d6c7015828",
-      "size": 72525,
+      "sha256": "a9862341ac103869d5f238ea0bd97707c88ea04f1abf1555afc11bc1fc8860f1",
+      "size": 72535,
       "supportedOS": [
         {
           "minimum": "17.0",
@@ -64,8 +64,8 @@
       ],
       "publishedAt": "2026-08-30T13:30:00Z",
       "download": "packages/bPVZ.3105",
-      "sha256": "529b57ba580bba7142a324ef23f677086619161c11b073f37f88ebf5e29f5943",
-      "size": 70606,
+      "sha256": "a13290b18524e7b476ecb4fdccbac90c031fb3dcdafa8fad5fe685242c0950f7",
+      "size": 70615,
       "supportedOS": [
         {
           "minimum": "15.0",
@@ -110,8 +110,8 @@
       ],
       "publishedAt": "2026-09-02T21:30:00Z",
       "download": "packages/bFIMO.3105",
-      "sha256": "8e0ea2acf0c9f71ffe295b25d666bad404ff1338861fc4332e6bbf69d0948681",
-      "size": 170449,
+      "sha256": "e8ace56dbe2a09acca56b39e9c273a5997d5a887b274dfb15ffd44c6e737dbdb",
+      "size": 170460,
       "supportedOS": [
         {
           "minimum": "15.0",
