@@ -6,11 +6,11 @@
   "packages": [
     {
       "identifier": "wbf-full",
-      "name": "Weapon Ball Fight Mod",
+      "name": "b'WBF",
       "author": "b",
       "version": "1.0.0",
       "summary": "WBF 𖤐 Đã Tuỳ Chỉnh Save Data",
-      "description": "★ Tính Năng ★\n\n• Super Progression — mở khóa toàn bộ Dạng Super.\n• Controllable Progression — mở khóa toàn bộ Dạng Controllable.\n• Unlock toàn bộ Ball & Skin.\n• 1.000M Coins.\n• Toàn bộ Progression đã được mở khóa.\n\n⊹ Trải nghiệm WBF với toàn bộ nội dung sẵn có.",
+      "description": "★ Tính Năng ★\n\n• Super Progression — kích hoạt sẵn toàn bộ Dạng Super.\n• Controllable Progression — kích hoạt sẵn toàn bộ Dạng Controllable.\n• Đồng bộ sẵn toàn bộ Ball & Skin.\n• 1.000M Coins.\n• Toàn bộ Progression đã được kích hoạt.\n\n⊹ Trải nghiệm WBF với toàn bộ nội dung sẵn có.",
       "category": "Game",
       "tags": [
         "Application",
@@ -52,11 +52,11 @@
     },
     {
       "identifier": "pvz1-full",
-      "name": "Plants Vs Zombies™ Mod",
+      "name": "b'PVZ",
       "author": "b",
       "version": "1.0.0",
       "summary": "PVZ 𖤐 Đã Tuỳ Chỉnh Save Data",
-      "description": "★ Tính Năng ★\n\n• Speed Up — sử dụng không giới hạn.\n• 9.000.000 Coins.\n• Mở khóa toàn bộ nội dung trong game.\n• Mở khóa toàn bộ Mini-Games.\n• Loại bỏ quảng cáo.\n\n⊹ Trải nghiệm PvZ với đầy đủ nội dung được mở khóa.",
+      "description": "★ Tính Năng ★\n\n• Speed Up — mở rộng sử dụng.\n• 9.000.000 Coins.\n• Kích hoạt sẵn toàn bộ nội dung trong game.\n• Kích hoạt sẵn toàn bộ Mini-Games.\n\n⊹ Trải nghiệm PvZ với đầy đủ nội dung được mở khóa.",
       "category": "Game",
       "tags": [
         "Application",
@@ -98,11 +98,11 @@
     },
     {
       "identifier": "fimo-pro",
-      "name": "FIMO PRO",
+      "name": "b'FIMO",
       "author": "b",
       "version": "1.0.0",
-      "summary": "FIMO 𖤐 Đã Mở Khóa PRO",
-      "description": "★ Tính Năng ★\n\n• Mở khóa PRO vĩnh viễn.\n• Sử dụng không giới hạn toàn bộ Film Pro.\n• Bỏ qua giới hạn dùng thử ảnh.\n\n⊹ Trải nghiệm FIMO với toàn bộ film cao cấp đã được mở khóa.",
+      "summary": "FIMO 𖤐 Cấu Hình Tùy Chỉnh",
+      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ Film cao cấp.\n• Đồng bộ tùy chọn dùng thử ảnh.\n\n⊹ Trải nghiệm FIMO với toàn bộ film cao cấp đã được mở khóa.",
       "category": "Photography",
       "tags": [
         "Application",
