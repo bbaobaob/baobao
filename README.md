@@ -1,6 +1,6 @@
 # baobao's Repo — 3105 patch repository
 
-Nguồn repository cho app **3105** (schemaVersion 1).
+Nguồn repository cho app **3105** (schemaVersion 3).
 
 ## Thêm vào 3105
 Dán URL manifest này vào 3105 → Repository → Add source:
