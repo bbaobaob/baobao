@@ -5,7 +5,7 @@
   "description": "Source Repository Của @Kocoj",
   "packages": [
     {
-      "identifier": "b'wbf",
+      "identifier": "bwbf",
       "name": "b'WBF",
       "author": "b",
       "version": "1.0.0",
@@ -17,7 +17,7 @@
         "Game"
       ],
       "publishedAt": "2026-08-29T07:15:00Z",
-      "download": "packages/WBF-Full.3105",
+      "download": "packages/bWBF.3105",
       "sha256": "4619e9e1a33f9492e6984c07f3a6c54bd16074c819608f938ec610d6c7015828",
       "size": 72525,
       "supportedOS": [
@@ -51,7 +51,7 @@
       "password": "JFL"
     },
     {
-      "identifier": "b'pvz",
+      "identifier": "bpvz",
       "name": "b'PVZ",
       "author": "b",
       "version": "1.0.0",
@@ -63,7 +63,7 @@
         "Game"
       ],
       "publishedAt": "2026-08-30T13:30:00Z",
-      "download": "packages/PVZ1-Full.3105",
+      "download": "packages/bPVZ.3105",
       "sha256": "529b57ba580bba7142a324ef23f677086619161c11b073f37f88ebf5e29f5943",
       "size": 70606,
       "supportedOS": [
@@ -97,7 +97,7 @@
       "password": "JFL"
     },
     {
-      "identifier": "b'fimo",
+      "identifier": "bfimo",
       "name": "b'FIMO",
       "author": "b",
       "version": "1.0.0",
@@ -109,7 +109,7 @@
         "Photography"
       ],
       "publishedAt": "2026-09-02T21:30:00Z",
-      "download": "packages/FIMO-PRO.3105",
+      "download": "packages/bFIMO.3105",
       "sha256": "8e0ea2acf0c9f71ffe295b25d666bad404ff1338861fc4332e6bbf69d0948681",
       "size": 170449,
       "supportedOS": [
