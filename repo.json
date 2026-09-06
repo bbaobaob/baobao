@@ -3,7 +3,7 @@
   "identifier": "com.baobao.repository",
   "name": "baobao's Repository",
   "description": "Source Repository Của @Kocoj",
-  "accentColor": "#F2F2F2",
+  "accentColor": "#FFF5F5",
   "packages": [
     {
       "identifier": "bwbf",
