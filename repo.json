@@ -3,7 +3,7 @@
   "identifier": "com.baobao.repository",
   "name": "baobao's Repository",
   "description": "Source Repository Của @Kocoj",
-  "accentColor": "#FFF5F5",
+  "accentColor": "#F5FFFA",
   "packages": [
     {
       "identifier": "bwbf",
@@ -176,7 +176,7 @@
         }
       ],
       "featured": true,
-      "isPrivate": true,
+      "isPrivate": false,
       "icon": "assets/blocket-full.png",
       "screenshots": [
         "assets/blocket-1.png",
