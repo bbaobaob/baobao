@@ -142,6 +142,48 @@
         "assets/fimo-3.png"
       ],
       "password": "JFL"
+    },
+    {
+      "identifier": "bwidgy",
+      "name": "b'Widgy",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "Widgy 𖤐 Cấu Hình Tùy Chỉnh",
+      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm Widgy với đầy đủ nội dung cao cấp.",
+      "category": "Customization",
+      "tags": [
+        "Application",
+        "Customization"
+      ],
+      "publishedAt": "2026-09-06T00:00:00Z",
+      "download": "packages/bWidgy.3105",
+      "sha256": "b7c6dda45e67eff8c90052e102597e8cc0ba2e65c08dfa8a29e95a9db529c802",
+      "size": 2266,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
+      "featured": true,
+      "isPrivate": true,
+      "icon": "assets/blocket-full.png",
+      "screenshots": [
+        "assets/blocket-1.png",
+        "assets/blocket-2.png",
+        "assets/blocket-3.png"
+      ],
+      "password": "JFL"
     }
   ],
   "icon": "assets/repo-icon.png"
