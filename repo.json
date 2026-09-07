@@ -187,26 +187,23 @@
     },
     {
       "identifier": "biscreen",
-      "name": "bIscreen",
+      "name": "b'Iscreen",
       "author": "b",
       "version": "1.0.0",
-      "summary": "Full iScreen Premium.",
-      "category": "Tweaks",
+      "summary": "iScreen 𖤐 Cấu Hình Tùy Chỉnh",
+      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm iScreen với đầy đủ nội dung cao cấp.",
+      "category": "Customization",
       "tags": [
         "Application",
-        "Premium"
+        "Customization"
       ],
-      "publishedAt": "2026-09-07T08:58:23Z",
+      "publishedAt": "2026-09-07T09:07:23Z",
       "download": "packages/bIscreen.3105",
-      "sha256": "82ca40ed7724f047bd3aa090303316093cc8f706a6c110a69e7862d0c43bbd6d",
-      "size": 1747,
+      "sha256": "b6d5750018f064cc3e747e7ce7a1e608a4a129d3267b918f99759c9526aa9bc5",
+      "size": 1738,
       "supportedOS": [
         {
           "minimum": "17.0",
-          "maximum": "17.7.2"
-        },
-        {
-          "minimum": "18.0",
           "maximum": "18.7.1"
         },
         {
@@ -220,7 +217,6 @@
           ]
         }
       ],
-      "changelog": "Bản đầu tiên. Mở khóa VIP + tắt paywall. Mật khẩu: JFL.",
       "featured": true,
       "isPrivate": false,
       "icon": "assets/biscreen.png",
@@ -228,7 +224,8 @@
         "assets/biscreen-1.png",
         "assets/biscreen-2.png",
         "assets/biscreen-3.png"
-      ]
+      ],
+      "password": "JFL"
     }
   ],
   "icon": "assets/repo-icon.png"
