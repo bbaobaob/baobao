@@ -184,6 +184,51 @@
         "assets/bwidgy-3.png"
       ],
       "password": "JFL"
+    },
+    {
+      "identifier": "biscreen",
+      "name": "bIscreen",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "Full iScreen Premium.",
+      "category": "Tweaks",
+      "tags": [
+        "Application",
+        "Premium"
+      ],
+      "publishedAt": "2026-09-07T08:58:23Z",
+      "download": "packages/bIscreen.3105",
+      "sha256": "82ca40ed7724f047bd3aa090303316093cc8f706a6c110a69e7862d0c43bbd6d",
+      "size": 1747,
+      "supportedOS": [
+        {
+          "minimum": "17.0",
+          "maximum": "17.7.2"
+        },
+        {
+          "minimum": "18.0",
+          "maximum": "18.7.1"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.0",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f"
+          ]
+        }
+      ],
+      "changelog": "Bản đầu tiên. Mở khóa VIP + tắt paywall. Mật khẩu: JFL.",
+      "featured": true,
+      "isPrivate": false,
+      "icon": "assets/biscreen.png",
+      "screenshots": [
+        "assets/biscreen-1.png",
+        "assets/biscreen-2.png",
+        "assets/biscreen-3.png"
+      ]
     }
   ],
   "icon": "assets/repo-icon.png"
