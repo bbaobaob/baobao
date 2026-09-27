@@ -32,14 +32,7 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
-        }
+          "maximum": "27.0"
       ],
       "featured": true,
       "isPrivate": false,
@@ -78,14 +71,7 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
-        }
+          "maximum": "27.0"
       ],
       "featured": true,
       "isPrivate": false,
@@ -124,14 +110,7 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
-        }
+          "maximum": "27.0"
       ],
       "featured": true,
       "isPrivate": false,
@@ -166,14 +145,7 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
-        }
+          "maximum": "27.0"
       ],
       "featured": true,
       "isPrivate": false,
@@ -208,14 +180,7 @@
         },
         {
           "minimum": "27.0",
-          "maximum": "27.0",
-          "builds": [
-            "24A5355q",
-            "24A5370h",
-            "24A5380h",
-            "24A5390f"
-          ]
-        }
+          "maximum": "27.0"
       ],
       "featured": true,
       "isPrivate": false,
