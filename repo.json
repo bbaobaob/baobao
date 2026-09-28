@@ -24,7 +24,7 @@
       "supportedOS": [
         {
           "minimum": "17.0",
-          "maximum": "18.7.1"
+          "maximum": "18.7.10"
         },
         {
           "minimum": "26.0",
@@ -64,7 +64,7 @@
       "supportedOS": [
         {
           "minimum": "15.0",
-          "maximum": "18.7.1"
+          "maximum": "18.7.10"
         },
         {
           "minimum": "26.0",
@@ -104,7 +104,7 @@
       "supportedOS": [
         {
           "minimum": "15.0",
-          "maximum": "18.7.1"
+          "maximum": "18.7.10"
         },
         {
           "minimum": "26.0",
@@ -144,7 +144,7 @@
       "supportedOS": [
         {
           "minimum": "17.0",
-          "maximum": "18.7.1"
+          "maximum": "18.7.10"
         },
         {
           "minimum": "27.0",
