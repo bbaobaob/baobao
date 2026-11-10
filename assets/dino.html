@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Dino Game — Made by b</title>
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#0b0d12;overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  #wrap{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:14px;padding:16px;box-sizing:border-box}
+  canvas{width:100%;max-width:820px;aspect-ratio:2/1;background:#11151d;border-radius:16px;
+    box-shadow:0 10px 40px rgba(0,0,0,.55);touch-action:none}
+  #hud{display:flex;gap:14px;align-items:center;color:#ffd76a;font-weight:800;font-size:15px;
+    letter-spacing:.06em;text-transform:uppercase}
+  #hud span{background:rgba(255,255,255,.06);padding:6px 12px;border-radius:999px}
+  #tip{color:#7d8798;font-size:12.5px;text-align:center;max-width:520px;line-height:1.5}
+  #brand{color:#ffb020;font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="hud"><span id="score">0</span><span id="best">0</span><span id="state">READY</span></div>
+  <canvas id="cv" width="820" height="410"></canvas>
+  <div id="tip">Nhấn / kéo để nhảy · bấm để chơi lại khi thua</div>
+  <div id="brand">Made by b</div>
+</div>
+<script>
+(function(){
+  const cv=document.getElementById('cv'), ctx=cv.getContext('2d');
+  const W=cv.width, H=cv.height, GROUND=H-70;
+  const scoreEl=document.getElementById('score'), bestEl=document.getElementById('best'),
+        stateEl=document.getElementById('state');
+
+  const C={sky:'#11151d',ground:'#22293a',dino:'#6ee7a8',dinoDark:'#3fbf7d',
+           cactus:'#9aa7bd',cloud:'#1c2330',cloudLine:'#2b3547',text:'#ffd76a',dead:'#ff6b6b'};
+
+  let state='ready', score=0, best=+localStorage.getItem('dino_best')||0,
+      speed=6, spawnT=0, frames=0, jumpV=0, onGround=true, tPrev=0, hi=0;
+
+  const dino={x:90,w:44,h:46,y:GROUND-46};
+  let obstacles=[], clouds=[];
+
+  function reset(){
+    score=0; speed=6; spawnT=0; frames=0; hi=0;
+    obstacles=[]; clouds=[];
+    for(let i=0;i<4;i++) clouds.push({x:Math.random()*W,y:40+Math.random()*90,s:.5+Math.random()*.6});
+    dino.y=GROUND-dino.h; jumpV=0; onGround=true; state='ready'; sync();
+  }
+  function sync(){
+    scoreEl.textContent=score|0;
+    bestEl.textContent='BEST '+(best|0);
+    stateEl.textContent=state==='over'?'GAME OVER':(state==='run'?'PLAY':(state==='dead'?'CRASH':'READY'));
+  }
+  function jump(){
+    if(state==='over'){ reset(); return; }
+    if(state==='ready'){ state='run'; sync(); }
+    if(onGround){ jumpV=-15.5; onGround=false; }
+  }
+  function rnd(a,b){return a+Math.random()*(b-a)}
+
+  function spawn(){
+    const tall=Math.random()<.3;
+    const w=tall?22:32, h=tall?52:34;
+    obstacles.push({x:W+40,w:w,h:h,y:GROUND-h});
+    if(Math.random()<.28) obstacles.push({x:W+40+w+rnd(30,90),w:w,h:h,y:GROUND-h});
+  }
+
+  function rect(x,y,w,h,color){ctx.fillStyle=color;ctx.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h));}
+
+  function drawDino(){
+    const d=dino, c=state==='over'?C.dead:C.dino, cd=state==='over'?C.dead:C.dinoDark;
+    // thân
+    rect(d.x+6,d.y+14,26,26,c);
+    rect(d.x+10,d.y+6,16,10,c);           // đầu
+    rect(d.x+24,d.y+12,4,4,'#0b0d12');    // mắt
+    // chân
+    const p=Math.sin(frames*.25)*3;
+    rect(d.x+8,d.y+38,8,8,cd);
+    rect(d.x+22,d.y+38-p,8,8,cd);
+    rect(d.x+32,d.y+40+p,8,6,cd);
+    // tay
+    rect(d.x+2,d.y+22,6,14,cd);
+  }
+
+  function drawCactus(o){
+    rect(o.x,o.y,o.w,o.h,C.cactus);
+    if(o.w>26){ rect(o.x-5,o.y+10,6,16,C.cactus); rect(o.x+o.w-1,o.y+8,6,18,C.cactus); }
+  }
+
+  function drawCloud(c){
+    ctx.fillStyle=C.cloud;
+    ctx.beginPath(); ctx.ellipse(c.x,c.y,26*c.s,10*c.s,0,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle=C.cloudLine;
+    ctx.fillRect(c.x-18*c.s,c.y+8*c.s,36*c.s,3);
+  }
+
+  function loop(ts){
+    const dt=Math.min(40,(ts||0)-tPrev)/16.667; tPrev=ts||0; frames++;
+    ctx.fillStyle=C.sky; ctx.fillRect(0,0,W,H);
+    // đường
+    rect(0,GROUND,W,3,C.ground);
+    for(let i=0;i<18;i++){ const x=((i*46-frames*speed)% (W+46)); rect(x,GROUND+12,24,2,'#1a2030'); }
+    clouds.forEach(c=>{ c.x-=0.25*c.s; if(c.x<-40){c.x=W+40;c.y=40+Math.random()*90;} drawCloud(c); });
+
+    if(state==='run'){
+      score += 0.06*speed*dt;
+      speed = 6 + Math.min(14, score/450);
+      spawnT-=dt; if(spawnT<=0){ spawn(); spawnT = rnd(48,92); }
+    }
+
+    // nhảy
+    if(!onGround){
+      jumpV += 0.62*dt; dino.y += jumpV*dt;
+      if(dino.y>=GROUND-dino.h){ dino.y=GROUND-dino.h; jumpV=0; onGround=true; }
+    }
+    obstacles.forEach(o=>o.x-=speed*dt);
+
+    // va chạm
+    if(state==='run'){
+      for(const o of obstacles){
+        const hit = dino.x+8 < o.x+o.w && dino.x+dino.w-6 > o.x && dino.y+dino.h > o.y+4;
+        if(hit){ state='over'; best=Math.max(best,score|0); localStorage.setItem('dino_best',best); sync(); break; }
+      }
+      obstacles = obstacles.filter(o=>o.x+o.w>-40);
+    }
+
+    drawDino();
+    obstacles.forEach(drawCactus);
+    sync();
+    requestAnimationFrame(loop);
+  }
+
+  // điều khiển
+  cv.addEventListener('touchstart',e=>{e.preventDefault();jump();},{passive:false});
+  cv.addEventListener('mousedown',e=>{e.preventDefault();jump();});
+  document.addEventListener('keydown',e=>{
+    if(e.code==='Space'||e.code==='ArrowUp'){e.preventDefault();jump();}
+    if(e.code==='Enter'&&state==='over'){reset();}
+  });
+  document.addEventListener('touchend',e=>{ /* vuốt lên = nhảy */ },{passive:true});
+  let ty=0;
+  cv.addEventListener('touchstart',e=>{ty=e.touches[0].clientY;},{passive:true});
+
+  reset();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
