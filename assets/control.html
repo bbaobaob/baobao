@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>bLocket Control — Made by b</title>
+<style>
+:root{--bg:#0b0d12;--card:#141922;--line:#232b39;--txt:#e8eef8;--dim:#8b96a8;--acc:#ffc434;--acc2:#39ffaa;--bad:#ff6b6b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;-webkit-user-select:none;user-select:none}
+header{position:sticky;top:0;z-index:9;background:rgba(11,13,18,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);padding:14px 16px 12px}
+h1{margin:0;font-size:19px;letter-spacing:.02em}
+h1 span{color:var(--acc)}
+.sub{color:var(--dim);font-size:12px;margin-top:3px;letter-spacing:.08em;text-transform:uppercase}
+nav{display:flex;gap:7px;overflow-x:auto;margin-top:12px;padding-bottom:2px}
+nav button{flex:0 0 auto;background:#1a212c;border:1px solid var(--line);color:var(--dim);padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600}
+nav button.on{background:var(--acc);color:#1a1200;border-color:var(--acc)}
+main{padding:16px;max-width:900px;margin:0 auto}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.card h2{margin:0 0 4px;font-size:15px}
+.card .hint{color:var(--dim);font-size:12px;margin-bottom:11px;line-height:1.5}
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #1b222d}
+.row:last-child{border-bottom:0}
+.row label{font-size:14px;flex:1}
+.row small{display:block;color:var(--dim);font-size:11px;margin-top:2px;font-family:ui-monospace,Menlo,monospace}
+.sw{width:50px;height:29px;border-radius:999px;background:#2a3242;position:relative;flex:0 0 auto;transition:.18s;border:none}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:23px;height:23px;border-radius:50%;background:#7c879a;transition:.18s}
+.sw.on{background:rgba(57,255,170,.28)} .sw.on:after{left:24px;background:var(--acc2)}
+select,input[type=number],input[type=text]{background:#1b222d;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:7px 9px;font-size:13px;min-width:82px}
+input[type=range]{width:130px;accent-color:var(--acc)}
+.btn{background:var(--acc);color:#1a1200;border:0;border-radius:11px;padding:11px 17px;font-weight:800;font-size:14px}
+.btn2{background:#1e2633;color:var(--txt);border:1px solid var(--line);border-radius:11px;padding:10px 15px;font-weight:600;font-size:13px}
+.btn:disabled{opacity:.45}
+.row .btn2{padding:6px 11px;font-size:12px}
+pre{background:#0e1218;border:1px solid var(--line);border-radius:11px;padding:11px;font-size:11.5px;overflow:auto;max-height:280px;color:#b8c6da}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:10px}
+.grid img{width:100%;border-radius:11px;border:1px solid var(--line);display:block}
+.themes{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}
+.themes button{background:#1a212c;border:1px solid var(--line);color:var(--txt);padding:7px 12px;border-radius:999px;font-size:12.5px;font-weight:600}
+.themes button.on{border-color:var(--acc);color:var(--acc)}
+.badge{background:rgba(255,196,52,.14);color:var(--acc);border:1px solid rgba(255,196,52,.35);border-radius:999px;padding:3px 9px;font-size:11px;font-weight:700}
+hr{border:0;border-top:1px solid var(--line);margin:12px 0}
+input[type=file]{width:100%;font-size:13px;color:var(--dim)}
+footer{color:var(--dim);text-align:center;padding:26px 16px 40px;font-size:12px}
+footer b{color:var(--acc)}
+</style>
+</head>
+<body>
+<header>
+  <h1>bLocket <span>Control</span></h1>
+  <div class="sub">Made by b · bLocket v2.72.x</div>
+  <nav id="nav"></nav>
+</header>
+<main>
+  <section id="tab-gold" class="tab"></section>
+  <section id="tab-media" class="tab" hidden></section>
+  <section id="tab-frames" class="tab" hidden></section>
+  <section id="tab-anti" class="tab" hidden></section>
+  <section id="tab-export" class="tab" hidden></section>
+</main>
+<footer>Made by <b>b</b> · <span id="stamp"></span></footer>
+
+<script>
+/* ================= CONFIG ================= */
+const DEFAULTS = {
+  gates: {app_icon_picker:"enabled",camera_roll:"enabled",camera_theme:"enabled",locket_views:"enabled",
+    long_captions:"enabled",longer_video:"enabled",unlimited_friends:"enabled",priority_support:"enabled",
+    profile_badge:"enabled",remove_ads:"enabled",video:"enabled",custom_widget_frames:"enabled",
+    streak_recovery:"enabled",camera_filter_sheet:"enabled"},
+  flags: {user_data_export_enabled:true,signup_custom_profile_picture:true,streak_reminders:true,
+    widget_last_sent_indicator:true,widget_stale_state_enabled:true,show_no_friends_bottom_sheet:true,
+    use_invite_links_for_temp_users:true,use_directed_invite_links:true,friends_invite_links_use_share_extension:true,
+    prompt_contacts_on_search:true,share_history_prompt_enabled:true,get_friend_request_reengagement_status:true,
+    prompt_friend_request_reengagement:true,rollcall_confirm_skip_tagging:true,catch_up_show_nav_bar:true,
+    daily_checkmark_style:true,hide_chat_button:true,hide_invite_links:true,upload_use_heif_main:true,
+    upload_use_webp_main:true,upload_use_heif_thumbnail:true,always_show_widget_in_full_color:true,
+    camera_microphone_enabled:true,camera_volume_button_enabled:true,video_sound_enabled:true,
+    celebrity_vip_qr_redemption_enabled:true,private_moment_enabled:true,private_moments_enabled:true,
+    friends_posting_enabled:true,rollcall_enabled:true,rollcall_memories_streaks_enabled:true,
+    rollcall_live_activity_enabled:true,rollcall_tap_to_tag_enabled:true,rollcall_prompt_export_after_share:true,
+    rollcall_comment_actions:true,rollcall_comment_replies:true,rollcall_preupload_enabled:true,
+    groups_enabled:true,beta_features_enabled:true,join_community_enabled:true,join_testflight_enabled:true,
+    calendar_rewind_enabled:true,moment_views_enabled:true,notify_moment_views:true,record_moment_views:true,
+    is_unlimited_friends:true,can_add_friends:true,add_friends_unlimited:true,gold_badge:true,
+    badge_visible:true,profile_badge_visible:true,custom_widget_frames_enabled:true,
+    widget_frame_event_enabled:true,widget_frame_events_disabled:false,groups_feature_mode:"enabled",
+    overlay_navigator_enabled:true,audio_session_deactivation_enabled:true,
+    camera_roll_video_enabled:true,camera_roll_video_upload_enabled:true,internal_camera_roll_video_upload_enabled:true,
+    longer_video_enabled:true,longer_videos_enabled:true,longer_camera_roll_videos_enabled:true,
+    rollcall_memories_enabled:true,rollcall_tagging_enabled:true,unlimited_friends:"enabled"},
+  nums: {friend_suggestions_count:20,invite_suggestions_count:20,celebrity_inbox_limit:50,
+    upload_main_image_quality:1.0,upload_thumbnail_image_quality:1.0,upload_main_image_size:2160,
+    upload_thumbnail_image_size:1440,streak_fetch_delay_count_upper_bound:100,widget_frame_event_max_images:24,
+    max_friends_count:999999,signup_max_friends_count:999999,soft_friend_limit_threshold_count:999999,
+    unlimited_max_friend_count:999999,max_friends:999999,gold_max_duration:60,max_video_duration:60,
+    camera_roll_duration:60,camera_roll_max_duration:60,camera_roll_video_max_duration:60,
+    trim_max_duration:60,video_max_duration:60,video_trim_max_duration:60},
+  anti: {app_check_enabled:false,use_device_check_for_app_check:false,purchases_enabled:false,
+    set_client_data_enabled:false,refresh_interval:31536000,gold_subscription_override:true,
+    android_gold_subscription_override:true},
+  popup: {tag:"Made by b",title:"Tận hưởng , Trải nghiệm !",body:"Made by b",
+    imageURL:"https://raw.githubusercontent.com/bbaobaob/baobao/main/assets/repo-icon.png",
+    campaign:"made_by_b"},
+  theme:"gold", frames:[]
+};
+const KEY="blocket_control_v1";
+let CFG = load();
+function load(){ try{ const s=JSON.parse(localStorage.getItem(KEY)||"null"); if(!s) return structuredClone(DEFAULTS);
+  return Object.assign(structuredClone(DEFAULTS), s, {gates:Object.assign({},DEFAULTS.gates,s.gates||{}),
+    flags:Object.assign({},DEFAULTS.flags,s.flags||{}), nums:Object.assign({},DEFAULTS.nums,s.nums||{}),
+    anti:Object.assign({},DEFAULTS.anti,s.anti||{}), popup:Object.assign({},DEFAULTS.popup,s.popup||{})}); }
+  catch(e){ return structuredClone(DEFAULTS); } }
+function save(){ localStorage.setItem(KEY, JSON.stringify(CFG)); }
+
+const THEMES={gold:{a:[255,196,52]},neon:{a:[57,255,170]},pink:{a:[255,118,186]},
+  ice:{a:[120,200,255]},violet:{a:[170,130,255]},ember:{a:[255,120,60]},mono:{a:[232,238,248]},mint:{a:[120,245,200]}};
+const REPO={owner:"bbaobaob",repo:"baobao"};
+
+/* ================= TABS ================= */
+const TABS=[["gold","Gold & Tính năng"],["media","Ảnh & Media"],["frames","Widget Frame"],["anti","Chống quét"],["export","Xuất"]];
+document.getElementById("nav").innerHTML=TABS.map(([id,l],i)=>
+  `<button data-tab="${id}" class="${i===0?'on':''}">${l}</button>`).join("");
+document.querySelectorAll("#nav button").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll("#nav button").forEach(x=>x.classList.remove("on")); b.classList.add("on");
+  document.querySelectorAll(".tab").forEach(t=>t.hidden = t.id!=="tab-"+b.dataset.tab);
+  render();
+});
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ================= TAB: GOLD ================= */
+function renderGold(){
+  const gateRows=Object.keys(CFG.gates).map(k=>`
+    <div class="row"><label>gate <small>${k}</small></label>
+      <select data-gate="${k}">${["enabled","subscriber","disabled"].map(v=>
+        `<option ${CFG.gates[k]===v?"selected":""}>${v}</option>`).join("")}</select></div>`).join("");
+  const flagRows=Object.keys(CFG.flags).map(k=>{
+    const v=CFG.flags[k];
+    return `<div class="row"><label>${k}</label>
+      ${typeof v==="boolean"
+        ? `<button class="sw ${v?'on':''}" data-flag="${k}" data-val="${!v}"></button>`
+        : `<select data-flagsel="${k}">${["enabled","disabled"].map(o=>`<option ${v===o?"selected":""}>${o}</option>`).join("")}</select>`}
+    </div>`;}).join("");
+  const numRows=Object.keys(CFG.nums).map(k=>`
+    <div class="row"><label>${k}</label>
+      <input type="number" data-num="${k}" value="${CFG.nums[k]}"></div>`).join("");
+  document.getElementById("tab-gold").innerHTML=`
+    <div class="card"><h2>Feature gates <span class="badge">${Object.keys(CFG.gates).length}</span></h2>
+      <div class="hint">Mỗi gate có 3 trạng thái. <b>enabled</b> = mở cho tất cả, không cần subscription.</div>
+      ${gateRows}</div>
+    <div class="card"><h2>Cờ bật/tắt</h2><div class="hint">${Object.keys(CFG.flags).length} cờ. Bật = mở tính năng.</div>${flagRows}</div>
+    <div class="card"><h2>Số</h2><div class="hint">Giới hạn, thời lượng, chất lượng ảnh.</div>${numRows}</div>`;
+  document.querySelectorAll("[data-gate]").forEach(s=>s.onchange=()=>{CFG.gates[s.dataset.gate]=s.value;save();});
+  document.querySelectorAll("[data-flag]").forEach(b=>b.onclick=()=>{
+    CFG.flags[b.dataset.flag]=b.dataset.val==="true";save();render();});
+  document.querySelectorAll("[data-flagsel]").forEach(s=>s.onchange=()=>{CFG.flags[s.dataset.flagsel]=s.value;save();});
+  document.querySelectorAll("[data-num]").forEach(i=>i.onchange=()=>{CFG.nums[i.dataset.num]=Number(i.value)||0;save();});
+}
+
+/* ================= TAB: MEDIA ================= */
+function renderMedia(){
+  document.getElementById("tab-media").innerHTML=`
+    <div class="card"><h2>Chọn ảnh từ thư viện</h2>
+      <div class="hint">Ảnh sẽ được dùng làm widget frame. Chọn nhiều ảnh cùng lúc.</div>
+      <input type="file" id="pick" accept="image/*" multiple>
+      <hr>
+      <h2 style="font-size:14px">Thông tin thương hiệu</h2>
+      <div class="row"><label>Dòng gold (tag)</label><input type="text" data-pop="tag" value="${esc(CFG.popup.tag)}" style="min-width:200px"></div>
+      <div class="row"><label>Title</label><input type="text" data-pop="title" value="${esc(CFG.popup.title)}" style="min-width:200px"></div>
+      <div class="row"><label>Dòng cuối (body)</label><input type="text" data-pop="body" value="${esc(CFG.popup.body)}" style="min-width:200px"></div>
+      <div class="row"><label>Ảnh logo (URL)</label><input type="text" data-pop="imageURL" value="${esc(CFG.popup.imageURL)}" style="min-width:200px"></div>
+      <div class="row"><label>Campaign id</label><input type="text" data-pop="campaign" value="${esc(CFG.popup.campaign)}" style="min-width:200px"></div>
+    </div>
+    <div class="card"><h2>Ảnh đã chọn</h2><div class="hint">${CFG.frames.length} ảnh. Bấm "Tạo frame" để render.</div>
+      <div class="grid" id="srcgrid"></div>
+      <div style="margin-top:12px;display:flex;gap:9px;flex-wrap:wrap">
+        <button class="btn" id="mkframes">Tạo widget frame</button>
+        <button class="btn2" id="dlframes">Tải PNG tất cả</button>
+        <button class="btn2" id="clr">Xoá ảnh</button>
+      </div>
+    </div>`;
+  document.querySelectorAll("[data-pop]").forEach(i=>i.onchange=()=>{CFG.popup[i.dataset.pop]=i.value;save();});
+  const g=document.getElementById("srcgrid");
+  g.innerHTML=CFG.frames.map((f,i)=>`<div><img src="${f}"><button class="btn2" data-del="${i}" style="margin-top:6px;width:100%">Xoá</button></div>`).join("");
+  document.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{CFG.frames.splice(+b.dataset.del,1);save();render();});
+  document.getElementById("pick").onchange=e=>{
+    Array.from(e.target.files).forEach(f=>{ const r=new FileReader();
+      r.onload=()=>{CFG.frames.push(r.result);save();render();}; r.readAsDataURL(f); });
+  };
+  document.getElementById("clr").onclick=()=>{CFG.frames=[];save();render();};
+  document.getElementById("mkframes").onclick=makeFrames;
+  document.getElementById("dlframes").onclick=()=>{
+    (CFG.rendered||[]).forEach((d,i)=>{ const a=document.createElement("a");
+      a.href=d; a.download=`blocket-frame-${CFG.theme}-${i}.png`; a.click(); });
+  };
+}
+
+/* ================= RENDER FRAME ================= */
+function renderFrame(imgSrc, theme){
+  return new Promise(res=>{
+    const img=new Image(); img.crossOrigin="anonymous";
+    img.onload=()=>{
+      const W=900,H=460, cv=document.createElement("canvas"); cv.width=W; cv.height=H;
+      const x=cv.getContext("2d"), acc=THEMES[theme].a;
+      for(let i=0;i<7;i++){ x.strokeStyle=`rgba(${acc},${255*(1-i/7)},1)`; x.lineWidth=7;
+        x.beginPath(); x.roundRect(3+i,3+i,W-6-i,H-6-i,34); x.stroke(); }
+      x.save(); x.globalAlpha=.5;
+      const sc=Math.max(W/img.width,H/img.height), dw=img.width*sc, dh=img.height*sc;
+      x.drawImage(img,(W-dw)/2,(H-dh)/2,dw,dh); x.restore();
+      x.fillStyle="rgba(8,10,14,.55)"; x.fillRect(0,H-150,W,150);
+      x.fillStyle=`rgb(${acc})`; x.font="bold 74px -apple-system,Segoe UI,sans-serif"; x.textAlign="center";
+      x.fillText(CFG.popup.tag,W/2,H-72);
+      x.fillStyle="rgba(232,238,248,.9)"; x.font="30px -apple-system,Segoe UI,sans-serif";
+      x.fillText(CFG.popup.title,W/2,H-26);
+      res(cv.toDataURL("image/png"));
+    };
+    img.onerror=()=>res(null); img.src=imgSrc;
+  });
+}
+async function makeFrames(){
+  const out=[]; for(const f of CFG.frames){ const d=await renderFrame(f,CFG.theme); if(d) out.push(d); }
+  CFG.rendered=out; renderFrames(); save();
+}
+
+/* ================= TAB: FRAMES ================= */
+function renderFrames(){
+  const themes=Object.keys(THEMES).map(t=>`<button class="${CFG.theme===t?'on':''}" data-theme="${t}">${t}</button>`).join("");
+  const g=(CFG.rendered||[]).map((d,i)=>`<img src="${d}">`).join("");
+  document.getElementById("tab-frames").innerHTML=`
+    <div class="card"><h2>Theme khung</h2><div class="hint">Màu viền + chữ thương hiệu.</div>
+      <div class="themes">${themes}</div></div>
+    <div class="card"><h2>Kết quả</h2><div class="hint">${(CFG.rendered||[]).length} frame đã render. Đẩy lên repo để app lấy.</div>
+      <div class="grid">${g||'<div class="hint">Chưa có. Sang tab "Ảnh & Media" để chọn ảnh.</div>'}</div>
+      <div style="margin-top:12px;display:flex;gap:9px;flex-wrap:wrap">
+        <button class="btn" id="push">Đẩy frame lên GitHub</button>
+        <button class="btn2" id="dl2">Tải PNG</button>
+      </div>
+      <div class="hint" style="margin-top:10px">Cần GitHub token (repo ${REPO.owner}/${REPO.repo}) để đẩy. Token lưu trong máy bạn.</div>
+      <input type="text" id="tok" placeholder="ghp_..." value="${esc(localStorage.getItem("blocket_tok")||"")}" style="width:100%;margin-top:6px">
+    </div>`;
+  document.querySelectorAll("[data-theme]").forEach(b=>b.onclick=()=>{CFG.theme=b.dataset.theme;save();renderFrames();});
+  document.getElementById("dl2").onclick=()=>{
+    (CFG.rendered||[]).forEach((d,i)=>{const a=document.createElement("a");
+      a.href=d;a.download=`blocket-frame-${CFG.theme}-${i}.png`;a.click();});};
+  document.getElementById("tok").onchange=e=>localStorage.setItem("blocket_tok",e.target.value.trim());
+  document.getElementById("push").onclick=pushFrames;
+}
+
+async function pushFrames(){
+  const tok=localStorage.getItem("blocket_tok"); const btn=document.getElementById("push");
+  if(!tok){ alert("Cần token GitHub."); return; }
+  btn.disabled=true; btn.textContent="Đẩy...";
+  try{
+    const H={Authorization:"Bearer "+tok,"Content-Type":"application/json","Accept":"application/vnd.github+json"};
+    for(let i=0;i<(CFG.rendered||[]).length;i++){
+      const bin=atob(CFG.rendered[i].split(",")[1]), arr=new Uint8Array(bin.length);
+      for(let j=0;j<bin.length;j++)arr[j]=bin.charCodeAt(j);
+      let b64=btoa(String.fromCharCode(...arr));
+      const path=`assets/blocket-frame-${CFG.theme}-${i}.png`;
+      const ex=await (await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}/contents/${path}`,{headers:H})).json();
+      const body=JSON.stringify({message:`bLocket frame ${CFG.theme}-${i}`,content:b64,branch:"main",...(ex.sha?{sha:ex.sha}:{})});
+      const r=await (await fetch(`https://api.github.com/repos/${REPO.owner}/${REPO.repo}/contents/${path}`,{method:"PUT",headers:H,body})).json();
+      if(!r.content) throw new Error(r.message||"lỗi push");
+      CFG.frameUrls=CFG.frameUrls||[]; CFG.frameUrls[i]=`https://raw.githubusercontent.com/${REPO.owner}/${REPO.repo}/main/${path}`;
+      CFG.frameUrls[i]=`https://raw.githack.com/${REPO.owner}/${REPO.repo}/main/${path}`;
+    }
+    save(); btn.textContent="Đã đẩy ✓";
+  }catch(e){ btn.textContent="Lỗi"; alert(String(e.message||e)); }
+  finally{ setTimeout(()=>{btn.disabled=false;btn.textContent="Đẩy frame lên GitHub";},1600); }
+}
+
+/* ================= TAB: ANTI ================= */
+function renderAnti(){
+  const rows=Object.keys(CFG.anti).map(k=>{
+    const v=CFG.anti[k];
+    return `<div class="row"><label>${k}</label>
+      ${typeof v==="boolean"?`<button class="sw ${v?'on':''}" data-anti="${k}" data-val="${!v}"></button>`
+        :`<input type="number" data-antin="${k}" value="${v}" style="min-width:120px">`}</div>`;}).join("");
+  document.getElementById("tab-anti").innerHTML=`
+    <div class="card"><h2>Chống bị quét</h2>
+      <div class="hint">Tắt Firebase App Check, tắt DeviceCheck, ẩn nút mua, không gửi assignment,
+        refresh_interval = 1 năm, và override Gold cục bộ.</div>${rows}
+      <div class="hint" style="margin-top:12px">Lưu ý: <b>purchases_enabled=false</b> ẩn nút "Upgrade" trong menu —
+        nếu bạn muốn mua thật thì bật lại.</div>
+    </div>`;
+  document.querySelectorAll("[data-anti]").forEach(b=>b.onclick=()=>{CFG.anti[b.dataset.anti]=b.dataset.val==="true";save();render();});
+  document.querySelectorAll("[data-antin]").forEach(i=>i.onchange=()=>{CFG.anti[i.dataset.antin]=Number(i.value)||0;save();});
+}
+
+/* ================= TAB: EXPORT ================= */
+function buildConfig(){
+  const g={...CFG.gates};
+  const flags={}, nums={};
+  for(const [k,v] of Object.entries(CFG.flags)) if(typeof v==="boolean" && v===true) flags[k]="true";
+  for(const [k,v] of Object.entries(CFG.nums)) nums[k]=String(v);
+  return {
+    name:"bLocket", author:"b", feature_gates:g, flags, nums, anti:CFG.anti,
+    popup:CFG.popup, frame_urls:(CFG.frameUrls||[]),
+    widget_frame_event:(CFG.frameUrls&&CFG.frameUrls.length)?{
+      uid:"blocket_custom",url:CFG.frameUrls[CFG.frameUrls.length-1],placement:"below",
+      use_local_time_zone:true,start_at:"2020-01-01T00:00:00",end_at:"2099-12-31T23:59:59"}:null,
+    report_problem_suggestions:[{uid:"blocket_dino",
+      title:{en:"Dino Game 🦖",vi:"Dino Game 🦖"},
+      help_center_url:"https://raw.githack.com/"+REPO.owner+"/"+REPO.repo+"/main/assets/dino.html"}]
+  };
+}
+function renderExport(){
+  const cfg=buildConfig();
+  const json=JSON.stringify(cfg,null,2);
+  document.getElementById("tab-export").innerHTML=`
+    <div class="card"><h2>Config hiện tại</h2>
+      <div class="hint">Đây là toàn bộ cấu hình để dựng gói .3105.</div>
+      <pre id="cfg">${esc(json)}</pre>
+      <div style="margin-top:10px;display:flex;gap:9px;flex-wrap:wrap">
+        <button class="btn" id="dcfg">Tải config.json</button>
+        <button class="btn2" id="ccfg">Copy</button>
+        <button class="btn2" id="rst">Reset về mặc định</button>
+      </div>
+    </div>
+    <div class="card"><h2>Dựng gói .3105</h2>
+      <div class="hint">Lưu config.json rồi chạy lệnh dưới đây trên máy build.</div>
+      <pre>python3 tools/make_blocket.py --config config.json</pre>
+      <div class="hint" style="margin-top:10px">Lệnh sẽ patch RemoteConfig, đóng gói, verify và in link tải + link import thẳng vào 3105.</div>
+    </div>
+    <div class="card"><h2>Gói hiện tại</h2>
+      <div class="hint">bLocket.3105 đã đăng ký.</div>
+      <div style="display:flex;gap:9px;flex-wrap:wrap">
+        <a class="btn2" href="https://x0.at/mYaG.3105" target="_blank">Tải .3105</a>
+        <a class="btn2" href="threeoneosfive://import?url=https%3A%2F%2Fx0.at%2FmYaG.3105">Mở trong 3105</a>
+      </div>
+    </div>`;
+  document.getElementById("dcfg").onclick=()=>{
+    const a=document.createElement("a");
+    a.href=URL.createObjectURL(new Blob([json],{type:"application/json"}));
+    a.download="config.json"; a.click();};
+  document.getElementById("ccfg").onclick=async()=>{
+    try{ await navigator.clipboard.writeText(json); }catch(e){ alert("Copy thủ công: chọn toàn bộ text trên"); }};
+  document.getElementById("rst").onclick=()=>{ if(confirm("Reset toàn bộ?")){CFG=structuredClone(DEFAULTS);save();render();} };
+}
+
+/* ================= RENDER ================= */
+function render(){
+  const t=document.querySelector("#nav button.on").dataset.tab;
+  if(t==="gold")renderGold(); else if(t==="media")renderMedia();
+  else if(t==="frames")renderFrames(); else if(t==="anti")renderAnti(); else renderExport();
+}
+document.getElementById("stamp").textContent="v"+CFG.popup.campaign;
+save(); render();
+</script>
+</body>
+</html>
