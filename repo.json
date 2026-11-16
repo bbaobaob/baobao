@@ -2,16 +2,68 @@
   "schemaVersion": 1,
   "identifier": "com.baobao.repository",
   "name": "baobao's Repository",
-  "description": "Source Repository Của @Kocoj",
+  "description": "🇻🇳 Repository nguồn của @Kocoj\n🇬🇧 Source repository by @Kocoj",
   "accentColor": "#30D158",
   "packages": [
+    {
+      "identifier": "bss",
+      "name": "bSubway Surf",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "Subway Surfers 𖤐 Đã Tuỳ Chỉnh Save Data",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Coins 999,999,999\n• Keys 999,999,999\n\n⊹ Trải nghiệm Subway Surfers với số tiền trong ví đã được nâng cấp.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Coins 999,999,999\n• Keys 999,999,999\n\n⊹ Experience Subway Surfers with an upgraded in-game wallet.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
+      "category": "Game",
+      "tags": [
+        "Application",
+        "Game"
+      ],
+      "publishedAt": "2026-11-16T21:45:00Z",
+      "download": "packages/bSubwaySurf.3105",
+      "sha256": "f1918be1efc0078fded0558fec32c0473269fa5bb786f7ed1cced12a8fa6b1e7",
+      "size": 1844,
+      "supportedOS": [
+        {
+          "minimum": "15.0",
+          "maximum": "18.7.10"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.7"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.2",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f",
+            "24A5408d",
+            "24A5418b",
+            "24A5424a",
+            "24A5430a",
+            "24A435",
+            "24A437",
+            "24B5084k",
+            "24B5089g"
+          ]
+        }
+      ],
+      "featured": true,
+      "isPrivate": true,
+      "icon": "assets/bss-full.png",
+      "screenshots": [
+        "assets/IMG_0177.png"
+      ],
+      "password": "JFL"
+    },
     {
       "identifier": "bwbf",
       "name": "b'WBF",
       "author": "b",
       "version": "1.0.0",
       "summary": "WBF 𖤐 Đã Tuỳ Chỉnh Save Data",
-      "description": "★ Tính Năng ★\n\n• Super Progression — kích hoạt sẵn toàn bộ Dạng Super.\n• Controllable Progression — kích hoạt sẵn toàn bộ Dạng Controllable.\n• Đồng bộ sẵn toàn bộ Ball & Skin.\n• 1.000M Coins.\n• Toàn bộ Progression đã được kích hoạt.\n\n⊹ Trải nghiệm WBF với toàn bộ nội dung sẵn có.\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Super Progression — kích hoạt sẵn toàn bộ Dạng Super.\n• Controllable Progression — kích hoạt sẵn toàn bộ Dạng Controllable.\n• Đồng bộ sẵn toàn bộ Ball & Skin.\n• 1.000M Coins.\n• Toàn bộ Progression đã được kích hoạt.\n\n⊹ Trải nghiệm WBF với toàn bộ nội dung sẵn có.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Super Progression — all Super forms unlocked.\n• Controllable Progression — all Controllable forms unlocked.\n• All Balls & Skins pre-synced.\n• 1,000M Coins.\n• All progression activated.\n\n⊹ Experience WBF with all content available.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
       "category": "Game",
       "tags": [
         "Application",
@@ -65,7 +117,7 @@
       "author": "b",
       "version": "1.0.0",
       "summary": "PVZ 𖤐 Đã Tuỳ Chỉnh Save Data",
-      "description": "★ Tính Năng ★\n\n• Speed Up — mở rộng sử dụng.\n• 9.000.000 Coins.\n• Kích hoạt sẵn toàn bộ nội dung trong game.\n• Kích hoạt sẵn toàn bộ Mini-Games.\n\n⊹ Trải nghiệm PvZ với đầy đủ nội dung được mở khóa.\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Speed Up — mở rộng sử dụng.\n• 9.000.000 Coins.\n• Kích hoạt sẵn toàn bộ nội dung trong game.\n• Kích hoạt sẵn toàn bộ Mini-Games.\n\n⊹ Trải nghiệm PvZ với đầy đủ nội dung được mở khóa.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Speed Up — expanded usage.\n• 9,000,000 Coins.\n• All in-game content unlocked.\n• All Mini-Games unlocked.\n\n⊹ Experience PvZ with all content unlocked.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
       "category": "Game",
       "tags": [
         "Application",
@@ -119,7 +171,7 @@
       "author": "b",
       "version": "1.0.0",
       "summary": "FIMO 𖤐 Cấu Hình Tùy Chỉnh",
-      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ Film cao cấp.\n• Đồng bộ tùy chọn dùng thử ảnh.\n\n⊹ Trải nghiệm FIMO với toàn bộ film cao cấp đã được mở khóa.\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ Film cao cấp.\n• Đồng bộ tùy chọn dùng thử ảnh.\n\n⊹ Trải nghiệm FIMO với toàn bộ film cao cấp đã được mở khóa.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Full premium pack activated.\n• Access to all premium films.\n• Photo trial options synced.\n\n⊹ Experience FIMO with all premium films unlocked.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
       "category": "Photography",
       "tags": [
         "Application",
@@ -173,7 +225,7 @@
       "author": "b",
       "version": "1.0.0",
       "summary": "Widgy 𖤐 Cấu Hình Tùy Chỉnh",
-      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm Widgy với đầy đủ nội dung cao cấp.\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm Widgy với đầy đủ nội dung cao cấp.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Full premium pack activated.\n• Access to all features.\n• App configuration synced.\n\n⊹ Experience Widgy with all premium content.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
       "category": "Customization",
       "tags": [
         "Application",
@@ -227,7 +279,7 @@
       "author": "b",
       "version": "1.0.0",
       "summary": "iScreen 𖤐 Cấu Hình Tùy Chỉnh",
-      "description": "★ Tính Năng ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm iScreen với đầy đủ nội dung cao cấp.\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.",
+      "description": "━━━━━━━━━━━━━━━━━━\n🇻🇳 TIẾNG VIỆT\n━━━━━━━━━━━━━━━━━━\n\n★ TÍNH NĂNG ★\n\n• Kích hoạt đầy đủ gói cao cấp.\n• Truy cập đầy đủ toàn bộ tính năng.\n• Đồng bộ cấu hình ứng dụng.\n\n⊹ Trải nghiệm iScreen với đầy đủ nội dung cao cấp.\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n━━━━━━━━━━━━━━━━━━\n🇬🇧 ENGLISH\n━━━━━━━━━━━━━━━━━━\n\n★ FEATURES ★\n\n• Full premium pack activated.\n• Access to all features.\n• App configuration synced.\n\n⊹ Experience iScreen with all premium content.\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
       "category": "Customization",
       "tags": [
         "Application",
