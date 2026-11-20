@@ -6,6 +6,60 @@
   "accentColor": "#30D158",
   "packages": [
     {
+      "identifier": "bhangrong",
+      "name": "bHangRong",
+      "author": "b",
+      "version": "1.0.0",
+      "summary": "Hàng Rong Tuổi Thơ 𖤐 Đã Tuỳ Chỉnh Save Data",
+      "description": "🇻🇳 [VI]\n★ Tính Năng ★\n• Gem 2,000,000,000\n• Money 2,000,000,000\n• Mở khoá toàn bộ gói trong Shop.\n• Không còn quảng cáo.\n• X2 Money vĩnh viễn.\n• Tên hiển thị trong game: Made by b\n\n✦ Cần hỗ trợ hoặc suggest app muốn patch, vui lòng liên hệ @Kocoj tại Telegram.\n\n🇬🇧 [EN]\n★ Features ★\n• Gems 2,000,000,000\n• Money 2,000,000,000\n• All Shop packs unlocked.\n• Ads removed.\n• Permanent X2 Money.\n• In-game display name: Made by b\n\n✦ Need support or want to suggest an app to patch? Contact @Kocoj on Telegram.",
+      "category": "Game",
+      "tags": [
+        "Application",
+        "Game"
+      ],
+      "publishedAt": "2026-11-20T05:05:00Z",
+      "download": "packages/bHangRong.3105",
+      "sha256": "64fb631667fdfa065299da13287cae286f41ad175ae36ff9e1ad36a765d401b6",
+      "size": 3704,
+      "supportedOS": [
+        {
+          "minimum": "15.0",
+          "maximum": "18.7.10"
+        },
+        {
+          "minimum": "26.0",
+          "maximum": "26.7"
+        },
+        {
+          "minimum": "27.0",
+          "maximum": "27.2",
+          "builds": [
+            "24A5355q",
+            "24A5370h",
+            "24A5380h",
+            "24A5390f",
+            "24A5408d",
+            "24A5418b",
+            "24A5424a",
+            "24A5430a",
+            "24A435",
+            "24A437",
+            "24B5084k",
+            "24B5089g"
+          ]
+        }
+      ],
+      "featured": true,
+      "isPrivate": true,
+      "icon": "assets/hangrong-full.png",
+      "screenshots": [
+        "assets/hangrong-1.png",
+        "assets/hangrong-2.png",
+        "assets/hangrong-3.png"
+      ],
+      "password": "JFL"
+    },
+    {
       "identifier": "bss",
       "name": "bSubway Surf",
       "author": "b",
